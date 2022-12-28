@@ -4,6 +4,9 @@ import Project1 from "../components/projects/Project1";
 import Project2 from "../components/projects/Project2";
 import Project3 from "../components/projects/Project3";
 import Project4 from "../components/projects/Project4";
+import Project5 from "../components/projects/Project5";
+import Project6 from "../components/projects/Project6";
+import Project7 from "../components/projects/Project7";
 
 const container = {
   hidden: {},
@@ -79,7 +82,7 @@ const Projects = () => {
         >
           {/* ROW 1 */}
           <div
-            className="flex justify-center text-center items-center p-10 bg-red
+            className="flex justify-center text-center items-center p-10 bg-gray-600
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
             BEAUTIFUL USER INTERFACES
@@ -91,11 +94,11 @@ const Projects = () => {
           {/* ROW 2 */}
           <Project3/>
          <Project4/>
-          <Project title="Project 5" />
+         <Project5/>
 
           {/* ROW 3 */}
-          <Project title="Project 6" />
-          <Project title="Project 7" />
+          <Project6/>
+          <Project7/>
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
