@@ -18,8 +18,8 @@ const Project3 = () => {
                     Full Responsive App consuming the Pokémon API you can Login, search for a Pokémon, filter by type or view stats.
                 </p>
                 <div className='flex gap-10 mt-7 cursor-pointer'>
-                    <a href="https://github.com/deca-dev/pokedex" target="_blank" rel= "noreferrer"><button className='hover:text-amber-500'><i className="mr-1 fa-brands fa-github"></i><span>GitHub</span></button></a>
-                    <a href="https://deluxe-concha-26efb2.netlify.app" target="_blank" rel= "noreferrer"><button className='hover:text-amber-500'><i className="mr-1 fa-regular fa-paper-plane"></i><span>Go to Website</span></button></a>
+                    <a href="https://github.com/deca-dev/RickandMorty" target="_blank" rel= "noreferrer"><button className='hover:text-amber-500'><i className="mr-1 fa-brands fa-github"></i><span>GitHub</span></button></a>
+                    <a href="https://capable-beijinho-4f705e.netlify.app/" target="_blank" rel= "noreferrer"><button className='hover:text-amber-500'><i className="mr-1 fa-regular fa-paper-plane"></i><span>Go to Website</span></button></a>
             
                 </div>
             </div>
