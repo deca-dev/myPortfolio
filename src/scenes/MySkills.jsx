@@ -23,10 +23,6 @@ const MySkills = () => {
             MY <span className="text-yellow">SKILLS</span>
           </p>
           <LineGradient width="w-1/3" />
-          <p className="mt-10 mb-7">
-            Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
-            fames odio in at.
-          </p>
         </motion.div>
 
         <div className="mt-16 md:mt-0">
@@ -57,17 +53,15 @@ const MySkills = () => {
         >
           <div className="relative h-32 z-10">
             <div className="z-10">
-              <p className="font-playfair font-semibold text-5xl">01</p>
+              <p className="font-playfair font-semibold text-5xl">HTML</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Experience
+              <i className=" text-5xl w-full fa-brands fa-html5"></i>
               </p>
             </div>
             <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            AHola auctor pharetra hendrerit mattis amet etiam interdum platea. Est
-            morbi porttitor scelerisque fermentum, sagittis non egestas. Amet
-            odio sit sagittis,
+            Hyper Text Markup Language utilized to strcuture and visualize information inside a web page. It's not a programming language but a series of tools that contribute the content to be shown and behave a certain way.
           </p>
         </motion.div>
 
@@ -85,18 +79,15 @@ const MySkills = () => {
         >
           <div className="relative h-32">
             <div className="z-10">
-              <p className="font-playfair font-semibold text-5xl">02</p>
+              <p className="font-playfair font-semibold text-5xl">CSS</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Innovative
+              <i className=" text-5xl w-full  fa-brands fa-css3-alt"></i>
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-            amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-            nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-            faucibus a
+            Cascading Style Sheets, used to render a graphic representation of the work. Adecuate to set and localize elements, give color, animate among many other functions.
           </p>
         </motion.div>
         {/* IMAGINATIVE */}
@@ -112,19 +103,42 @@ const MySkills = () => {
           }}
         >
           <div className="relative h-32">
-            <div className="z-11">
-              <p className="font-playfair font-semibold text-5xl">03</p>
+            <div className="z-10">
+              <p className="font-playfair font-semibold text-5xl">Javascript</p>
               <p className="font-playfair font-semibold text-3xl mt-3">
-                Imaginative
+              <i className=" text-5xl w-full fa-brands fa-js"></i>
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-30" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
-            Accumsan eu fringilla nisi, eget. Vitae, eget ut id proin arcu in
-            curabitur. Lectus libero, egestas enim aliquam quis felis amet.
-            Sagittis, amet netus fringilla netus lobortis odio sed platea.
-            Bibendum.
+            AKA JS, is a light programming language and focused to web application, that helps to set them funcionality. Due to its versatility, can be used outsed the web pages application.
+          </p>
+        </motion.div>
+
+        {/* IMAGINATIVE */}
+        <motion.div
+          className="md:w-1/3 mt-10 z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0.01 },
+          }}
+        >
+          <div className="relative h-32">
+            <div className="z-11">
+              <p className="font-playfair font-semibold text-5xl">React</p>
+              <p className="font-playfair font-semibold text-3xl mt-3">
+              <i className=" text-5xl w-full  fa-brands fa-react"></i>
+              </p>
+            </div>
+            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
+          </div>
+          <p className="mt-5">
+            One of Javascript most popular frameworks. With an open source use and helpful to develop user interfaces. Top level companies as Facebook, Netflix and Uber use it.
           </p>
         </motion.div>
       </div>

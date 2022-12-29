@@ -2,6 +2,7 @@ import SocialMediaIcons from "../components/SocialMediaIcons";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import DownloadBtn from "../components/DownloadBtn";
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
@@ -100,7 +101,10 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <SocialMediaIcons />
+          <div>
+            <DownloadBtn />
+            <SocialMediaIcons />
+          </div>
         </motion.div>
       </div>
     </section>

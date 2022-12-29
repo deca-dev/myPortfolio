@@ -54,7 +54,7 @@ const Contact = () => {
           }}
           className="basis-1/2 flex justify-center"
         >
-          {/* <img src="../assets/contact-image.jpeg" alt="contact" /> */}
+          <img src="../assets/contact_image.png" alt="contact" />
         </motion.div>
 
         <motion.div
@@ -71,7 +71,7 @@ const Contact = () => {
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
+            action="mailto:david.castroanaya@gmail.com"
             method="POST"
           >
             <input
