@@ -51,7 +51,7 @@ const Projects = () => {
       {/* PROJECTS */}
       <div className="flex justify-center">
         <motion.div
-          className="sm:grid sm:grid-cols-3"
+          className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           variants={container}
           initial="hidden"
           whileInView="visible"
