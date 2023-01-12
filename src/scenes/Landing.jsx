@@ -55,7 +55,7 @@ const Landing = ({ setSelectedPage }) => {
           </p>
 
           <p className="mt-10 mb-7 text-sm text-center md:text-start">
-            Hello, my name is David, I have extensive experience with HTML, CSS, JavaScript, React.js,  with basic knowledge of Node.js and databases. I am proactive, creative, with attention to detail and an aesthetic sense. I adapt quickly and I like to work in a team. I studied a bootcamp at a renowned Academy in Mexico called Academlo in addition to having taken several self-taught courses on Udemy. Below I present some of the technologies I handle and my created projects.
+            Hello, my name is David, I have extensive experience with HTML, CSS, JavaScript, React.js, Swift, Flutter with basic knowledge of Node.js and databases. I am proactive, creative, with attention to detail and an aesthetic sense. I adapt quickly and I like to work in a team. I studied a bootcamp at a renowned Academy in Mexico called Academlo in addition to having taken several self-taught courses on Udemy. Below I present some of the technologies I handle and my created projects.
           </p>
         </motion.div>
 
