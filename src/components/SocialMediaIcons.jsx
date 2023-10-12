@@ -11,7 +11,7 @@ const SocialMediaIcons = () => {
       </a>
       <a
         className="hover:opacity-50 transition duration-500"
-        href="https://github.com/deca-dev/myPortfolio"
+        href="https://github.com/deca-dev"
         target="_blank"
         rel="noreferrer"
       >
