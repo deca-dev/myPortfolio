@@ -34,7 +34,7 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <div className="w-5/6 mx-auto md:h-[105%]">
+      <div className="w-5/6 mx-auto md:h-[125%]">
         {isDesktop && (
           <DotGroup
             selectedPage={selectedPage}
