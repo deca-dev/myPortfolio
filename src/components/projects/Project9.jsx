@@ -24,7 +24,7 @@ const Project9 = () => {
             
                 </div>
             </div>
-            <img src={'../assets/project9.png'} alt='talentify' />
+            <img src={'../assets/project-9.png'} alt='talentify' />
         </motion.div>
     )
     }
