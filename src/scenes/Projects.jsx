@@ -7,6 +7,8 @@ import Project4 from "../components/projects/Project4";
 import Project5 from "../components/projects/Project5";
 import Project6 from "../components/projects/Project6";
 import Project7 from "../components/projects/Project7";
+import Project8 from "../components/projects/Project8";
+import Project9 from "../components/projects/Project9";
 
 const container = {
   hidden: {},
@@ -63,17 +65,21 @@ const Projects = () => {
             BEAUTIFUL USER INTERFACES
           </div>
 
-          <Project1/>
-          <Project2/>
+          <Project8/>
+          <Project9/>
 
           {/* ROW 2 */}
           <Project3/>
-         <Project4/>
-         <Project5/>
+          <Project4/>
+          <Project5/>
 
           {/* ROW 3 */}
           <Project6/>
           <Project7/>
+          <Project1/>
+         
+          {/* ROW 4 */}
+          <Project2/>
           <div
             className="flex justify-center text-center items-center p-10 bg-blue
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"

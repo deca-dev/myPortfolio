@@ -1,28 +1,54 @@
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import LineGradient from "../components/LineGradient";
-import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 
-
-
 const Contact = () => {
-  const {
-    register,
-    trigger,
-    formState: { errors },
-  } = useForm();
+  useEffect(() => {
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+  }, []);
 
-  const onSubmit = async (e) => {
-       
-    console.log("~ e", e);
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message,
+          to_email: process.env.REACT_APP_EMAILJS_EMAIL
+
+          
+        }
+      );
+      console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID);
+      console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
+      console.log(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
     }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <section id="contact" className="contact py-48">
-      {/* HEADINGS */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -44,7 +70,6 @@ const Contact = () => {
         </div>
       </motion.div>
 
-      {/* FORM & IMAGE */}
       <div className="md:flex md:justify-between gap-16 mt-5">
         <motion.div
           initial="hidden"
@@ -71,43 +96,26 @@ const Contact = () => {
           }}
           className="basis-1/2 mt-10 md:mt-0"
         >
-          <form
-            target="_blank"
-            onSubmit={onSubmit}
-            action="mailto:david.castroanaya@gmail.com"
-            method="POST"
-          >
+          <form onSubmit={handleSubmit}>
             <input
               className="w-full bg-gray-600 font-semibold placeholder-opaque-black p-3 outline-none"
               type="text"
+              name="name"
               placeholder="NAME"
-              {...register("name", {
-                required: true,
-                maxLength: 100,
-              })}
+              value={formData.name}
+              onChange={handleChange}
+              required
             />
-            {errors.name && (
-              <p className="text-white mt-1">
-                {errors.name.type === "required" && "This field is required."}
-                {errors.name.type === "maxLength" && "Max length is 100 char."}
-              </p>
-            )}
 
             <input
               className="w-full bg-gray-600 font-semibold placeholder-opaque-black p-3 mt-5 outline-none"
-              type="text"
+              type="email"
+              name="email"
               placeholder="EMAIL"
-              {...register("email", {
-                required: true,
-                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              })}
+              value={formData.email}
+              onChange={handleChange}
+              required
             />
-            {errors.email && (
-              <p className="text-white mt-1">
-                {errors.email.type === "required" && "This field is required."}
-                {errors.email.type === "pattern" && "Invalid email address."}
-              </p>
-            )}
 
             <textarea
               className="w-full bg-gray-600 font-semibold placeholder-opaque-black p-3 mt-5 outline-none"
@@ -115,26 +123,25 @@ const Contact = () => {
               placeholder="MESSAGE"
               rows="4"
               cols="50"
-              {...register("message", {
-                required: true,
-                maxLength: 2000,
-              })}
+              value={formData.message}
+              onChange={handleChange}
+              required
             />
-            {errors.message && (
-              <p className="text-white mt-1">
-                {errors.message.type === "required" &&
-                  "This field is required."}
-                {errors.message.type === "maxLength" &&
-                  "Max length is 2000 char."}
-              </p>
-            )}
 
             <button
-              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-blue hover:text-white transition duration-500"
+              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-blue hover:text-white transition duration-500 disabled:opacity-50"
               type="submit"
+              disabled={status === 'sending'}
             >
-              SEND ME A MESSAGE
+              {status === 'sending' ? 'SENDING...' : 'SEND ME A MESSAGE'}
             </button>
+
+            {status === 'success' && (
+              <p className="text-green-500 mt-3">Message sent successfully!</p>
+            )}
+            {status === 'error' && (
+              <p className="text-red-500 mt-3">Failed to send message. Please try again.</p>
+            )}
           </form>
         </motion.div>
       </div>
